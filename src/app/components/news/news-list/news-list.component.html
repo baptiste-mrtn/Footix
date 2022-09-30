@@ -1,0 +1,17 @@
+<div class="d-flex justify-content-between">
+  <h1>News</h1>
+  <a class="btn btn-success" routerLink="add">Ajouter</a>
+</div>
+<hr />
+
+<div *ngFor="let item of news" class="mb-4">
+  <h3>{{ item.title }}</h3>
+  <p>{{ item.content }}</p>
+  <img [src]="item.img" alt="image" /><br />
+  <small class="text-muted">Publiée le : {{ item.createdAt | date: "dd/MM/YYYY HH:mm" }}</small>
+  <div class="text-end">
+    <a class="btn btn-warning me-2" [routerLink]='"edit/" + item._id'>Modifier</a>
+    <a class="btn btn-danger" (click)="confirmDelete(item)">Supprimer</a>
+  </div>
+  <hr />
+</div>

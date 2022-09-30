@@ -1,0 +1,28 @@
+<h1>Nouvelle News</h1>
+<hr>
+
+<form action="post" [formGroup]="myForm" (ngSubmit)="addNews(myForm)">
+  <div class="form-group mb-4">
+    <label for="title">Titre</label>
+    <input type="text" class="form-control" id="title" formControlName="title">
+    <!-- <div class="text-red bordered"
+      *ngIf="myForm.get('title').invalid && (myForm.get('title').dirty || myForm.get('title').touched)">
+      Veuillez écrire un titre.
+    </div> -->
+  </div>
+  <div class="form-group mb-4">
+    <label for="content">Contenu</label>
+    <input type="text" class="form-control" id="content" formControlName="content">
+    <!-- <div class="text-red bordered"
+      *ngIf="myForm.get('content').invalid && (myForm.get('content').dirty || myForm.get('content').touched)">
+      Veuillez écrire un contenu.
+    </div> -->
+  </div>
+  <div class="form-group mb-4">
+    <label for="img">Url Image</label>
+    <input type="text" class="form-control" id="img" formControlName="img">
+  </div>
+  <div class="text-center">
+    <button type="submit" class="btn btn-success" [disabled]="myForm.invalid">Ajouter</button>
+  </div>
+</form>
